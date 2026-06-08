@@ -1,20 +1,23 @@
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { FaAward, FaCheck, FaSatellite } from 'react-icons/fa';
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { FaAward, FaCheck, FaSatellite } from "react-icons/fa";
 
 const About = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const floatingShapes = [
-    { top: '10%', left: '5%', size: '60px', delay: 0 },
-    { top: '60%', left: '10%', size: '40px', delay: 1 },
-    { top: '30%', left: '90%', size: '50px', delay: 2 },
-    { top: '80%', left: '85%', size: '70px', delay: 0.5 },
+    { top: "10%", left: "5%", size: "60px", delay: 0 },
+    { top: "60%", left: "10%", size: "40px", delay: 1 },
+    { top: "30%", left: "90%", size: "50px", delay: 2 },
+    { top: "80%", left: "85%", size: "70px", delay: 0.5 },
   ];
 
   return (
-    <section id="about" className="relative py-12 sm:py-16 lg:py-24 bg-white overflow-hidden">
+    <section
+      id="about"
+      className="relative py-12 sm:py-16 lg:py-24 bg-white overflow-hidden"
+    >
       {floatingShapes.map((shape, i) => (
         <motion.div
           key={i}
@@ -33,7 +36,7 @@ const About = () => {
             duration: 6,
             delay: shape.delay,
             repeat: Infinity,
-            ease: 'easeInOut',
+            ease: "easeInOut",
           }}
         />
       ))}
@@ -68,7 +71,9 @@ const About = () => {
                   <FaAward className="text-2xl sm:text-4xl" />
                   <div>
                     <div className="text-xl sm:text-3xl font-bold">10+</div>
-                    <div className="text-xs sm:text-sm opacity-80">Years Experience</div>
+                    <div className="text-xs sm:text-sm opacity-80">
+                      Years Experience
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -76,7 +81,7 @@ const About = () => {
               <motion.div
                 className="absolute -top-4 -left-4 w-24 h-24 bg-secondary/20 rounded-2xl -z-10"
                 animate={{ rotate: 360 }}
-                transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
+                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
               />
             </div>
           </motion.div>
@@ -95,27 +100,28 @@ const About = () => {
             </h2>
 
             <p className="text-base sm:text-lg text-text/80 mb-4 sm:mb-6 leading-relaxed">
-              SRI VELAN provides highly accurate Satellite (DGPS) and Digital Land
-              Surveying services using advanced surveying equipment and modern
-              technology. We specialize in land mapping, area calculations, DTCP
-              layout marking, land subdivision, blueprint drawing, structural design,
-              and soil testing services.
+              Since 2012 ,SRI VELAN provides highly accurate Satellite (DGPS)
+              and Digital Land Surveying services using advanced surveying
+              equipment and modern technology. We specialize in land mapping,
+              area calculations, DTCP layout marking, land subdivision,
+              blueprint drawing, structural design, and soil testing services.
             </p>
 
             <p className="text-text/70 mb-8">
-              With over a decade of experience, our team of expert surveyors delivers
-              precise measurements and reliable results for residential, commercial,
-              and industrial projects across Tamil Nadu.
+              With over a decade of experience, our team of expert surveyors
+              delivers precise measurements and reliable results for
+              residential, commercial, and industrial projects across Tamil
+              Nadu.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
               {[
-                'Satellite DGPS Survey',
-                'Digital Land Mapping',
-                'DTCP Layout Marking',
-                'Blueprint Drawing',
-                'Structural Design',
-                'Soil Testing Services',
+                "Satellite DGPS Survey",
+                "Digital Land Mapping",
+                "DTCP Layout Marking",
+                "Blueprint Drawing",
+                "Structural Design",
+                "Soil Testing Services",
               ].map((item, i) => (
                 <motion.div
                   key={item}

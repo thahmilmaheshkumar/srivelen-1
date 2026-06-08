@@ -28,7 +28,7 @@ const stats = [
   },
   {
     icon: FaCalendarAlt,
-    value: 10,
+    value: 14,
     suffix: "+",
     label: "Years Experience",
   },

@@ -1,28 +1,28 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import vijaiKumar from "../assets/vijai_kumar.png";
-import divyaBarathi from "../assets/divya_barathi.png";
-import krishnaraj from "../assets/krishnaraj.png";
+import vijaiKumar from "../assets/vijaya_kumar.png";
+import divyaBarathi from "../assets/thivya_barathi.png";
+import krishnaraj from "../assets/krisraja.png";
 
 const leaders = [
   {
     role: "Founder",
-    name: "Er. Vijai Kumar\n(Licensed Engineer)",
+    name: "Er. S.Vijayakumar\n(Licensed Engineer)",
     image: vijaiKumar,
   },
   {
     role: "Founder",
-    name: "Dr. Krishnaraj",
+    name: "Dr. A.R.Krishnaraja",
     image: krishnaraj,
   },
   {
     role: "Chairman",
-    name: "Mrs. Divya Bharathi",
+    name: "Mrs. Tivya Bharathi Vijayakumar",
     image: divyaBarathi,
   },
   {
     role: "Managing Director",
-    name: "Er. Vijai Kumar\n(Licensed Engineer)",
+    name: "Er. S.Vijayakumar\n(Licensed Engineer)",
     image: vijaiKumar,
   },
 ];

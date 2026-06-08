@@ -177,6 +177,13 @@ const Contact = () => {
                       >
                         +91 94883 82277
                       </a>
+                      <br />
+                      <a
+                        href="tel:+919698818277"
+                        className="hover:text-primary transition-colors"
+                      >
+                        +91 96988 18277
+                      </a>
                     </p>
                   </div>
                 </div>
