@@ -1,58 +1,58 @@
-import { motion, useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
-import api from '../api/axios';
+import { motion, useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import api from "../api/axios";
 import {
   FaMapMarkerAlt,
   FaPhone,
   FaEnvelope,
   FaPaperPlane,
   FaSpinner,
-} from 'react-icons/fa';
+} from "react-icons/fa";
 
 const services = [
-  'Satellite Survey',
-  'Digital Land Survey',
-  'Area Calculation & Land Mapping',
-  'Land Partition & Sub Division',
-  'DTCP Site Layout Marking',
-  'Blueprint Drawing',
-  'Structural Design',
-  'Land Soil Testing',
+  "Satellite Survey",
+  "Digital Land Survey",
+  "Area Calculation & Land Mapping",
+  "Land Partition & Sub Division",
+  "DTCP Site Layout Marking",
+  "Blueprint Drawing",
+  "Structural Design",
+  "Land Soil Testing",
 ];
 
 const Contact = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    location: '',
-    service: '',
-    message: '',
+    name: "",
+    phone: "",
+    email: "",
+    location: "",
+    service: "",
+    message: "",
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [submitError, setSubmitError] = useState('');
+  const [submitError, setSubmitError] = useState("");
 
   const validateForm = () => {
     const newErrors = {};
 
-    if (!formData.name.trim()) newErrors.name = 'Name is required';
+    if (!formData.name.trim()) newErrors.name = "Name is required";
     if (!formData.phone.trim()) {
-      newErrors.phone = 'Phone number is required';
-    } else if (!/^[0-9]{10}$/.test(formData.phone.replace(/\D/g, ''))) {
-      newErrors.phone = 'Enter a valid 10-digit phone number';
+      newErrors.phone = "Phone number is required";
+    } else if (!/^[0-9]{10}$/.test(formData.phone.replace(/\D/g, ""))) {
+      newErrors.phone = "Enter a valid 10-digit phone number";
     }
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Enter a valid email address';
+      newErrors.email = "Enter a valid email address";
     }
-    if (!formData.location.trim()) newErrors.location = 'Location is required';
-    if (!formData.service) newErrors.service = 'Please select a service';
-    if (!formData.message.trim()) newErrors.message = 'Message is required';
+    if (!formData.location.trim()) newErrors.location = "Location is required";
+    if (!formData.service) newErrors.service = "Please select a service";
+    if (!formData.message.trim()) newErrors.message = "Message is required";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -63,24 +63,24 @@ const Contact = () => {
     if (!validateForm()) return;
 
     setIsSubmitting(true);
-    setSubmitError('');
+    setSubmitError("");
 
     try {
-      await api.post('/api/enquiry', formData);
+      await api.post("/api/enquiry", formData);
 
       setSubmitted(true);
       setFormData({
-        name: '',
-        phone: '',
-        email: '',
-        location: '',
-        service: '',
-        message: '',
+        name: "",
+        phone: "",
+        email: "",
+        location: "",
+        service: "",
+        message: "",
       });
     } catch (error) {
       setSubmitError(
         error.response?.data?.message ||
-          'Unable to connect to server. Please make sure the server is running and try again.'
+          "Unable to connect to server. Please make sure the server is running and try again.",
       );
     }
 
@@ -88,19 +88,39 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-12 sm:py-16 lg:py-24 bg-dark-green relative overflow-hidden">
+    <section
+      id="contact"
+      className="py-12 sm:py-16 lg:py-24 bg-dark-green relative overflow-hidden"
+    >
       <div className="absolute inset-0 opacity-5">
-        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <svg
+          className="w-full h-full"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
           <defs>
-            <pattern id="grid3" width="10" height="10" patternUnits="userSpaceOnUse">
-              <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.3"/>
+            <pattern
+              id="grid3"
+              width="10"
+              height="10"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 10 0 L 0 0 0 10"
+                fill="none"
+                stroke="white"
+                strokeWidth="0.3"
+              />
             </pattern>
           </defs>
           <rect width="100" height="100" fill="url(#grid3)" />
         </svg>
       </div>
 
-      <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div
+        ref={ref}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+      >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -123,7 +143,9 @@ const Contact = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
           >
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl sm:rounded-3xl p-5 sm:p-8 mb-6 sm:mb-8">
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Contact Information</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">
+                Contact Information
+              </h3>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -149,11 +171,17 @@ const Contact = () => {
                   <div>
                     <h4 className="text-white font-semibold mb-1">Phone</h4>
                     <p className="text-white/70">
-                      <a href="tel:+919095520640" className="hover:text-primary transition-colors">
+                      <a
+                        href="tel:+919095520640"
+                        className="hover:text-primary transition-colors"
+                      >
                         +91 90955 20640
                       </a>
                       <br />
-                      <a href="tel:+919488382277" className="hover:text-primary transition-colors">
+                      <a
+                        href="tel:+919488382277"
+                        className="hover:text-primary transition-colors"
+                      >
                         +91 94883 82277
                       </a>
                     </p>
@@ -179,7 +207,7 @@ const Contact = () => {
 
             <div className="rounded-2xl overflow-hidden shadow-xl h-48 sm:h-64">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3910.7!2d77.4!3d11.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTCsDEyJzAwLjAiTiA3N8KwMjQnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!3m2!1sen!2sus!4v1780895424047!5m2!1sen!2sus!6m8!1m7!1sEVBIMps1YR2xN0uKcTtnzw!2m2!1d11.23123389206657!2d77.7179627537031!3f306.5969641008089!4f14.952305649608235!5f0.7820865974627469"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -202,12 +230,26 @@ const Contact = () => {
                   className="text-center py-12"
                 >
                   <div className="w-20 h-20 mx-auto mb-6 bg-green-100 rounded-full flex items-center justify-center">
-                    <svg className="w-10 h-10 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    <svg
+                      className="w-10 h-10 text-green-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-dark-green mb-2">Thank You!</h3>
-                  <p className="text-text/70">We will get back to you shortly.</p>
+                  <h3 className="text-2xl font-bold text-dark-green mb-2">
+                    Thank You!
+                  </h3>
+                  <p className="text-text/70">
+                    We will get back to you shortly.
+                  </p>
                   <button
                     onClick={() => setSubmitted(false)}
                     className="mt-6 px-6 py-2 bg-primary text-white rounded-full"
@@ -217,7 +259,9 @@ const Contact = () => {
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  <h3 className="text-xl sm:text-2xl font-bold text-dark-green mb-4 sm:mb-6">Send Enquiry</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-dark-green mb-4 sm:mb-6">
+                    Send Enquiry
+                  </h3>
 
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
@@ -225,20 +269,32 @@ const Contact = () => {
                         type="text"
                         placeholder="Your Name *"
                         value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className={`w-full px-4 py-3 rounded-xl border ${errors.name ? 'border-red-500' : 'border-gray-200'} focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all`}
+                        onChange={(e) =>
+                          setFormData({ ...formData, name: e.target.value })
+                        }
+                        className={`w-full px-4 py-3 rounded-xl border ${errors.name ? "border-red-500" : "border-gray-200"} focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all`}
                       />
-                      {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+                      {errors.name && (
+                        <p className="text-red-500 text-sm mt-1">
+                          {errors.name}
+                        </p>
+                      )}
                     </div>
                     <div>
                       <input
                         type="tel"
                         placeholder="Phone Number *"
                         value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className={`w-full px-4 py-3 rounded-xl border ${errors.phone ? 'border-red-500' : 'border-gray-200'} focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all`}
+                        onChange={(e) =>
+                          setFormData({ ...formData, phone: e.target.value })
+                        }
+                        className={`w-full px-4 py-3 rounded-xl border ${errors.phone ? "border-red-500" : "border-gray-200"} focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all`}
                       />
-                      {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
+                      {errors.phone && (
+                        <p className="text-red-500 text-sm mt-1">
+                          {errors.phone}
+                        </p>
+                      )}
                     </div>
                   </div>
 
@@ -248,35 +304,55 @@ const Contact = () => {
                         type="email"
                         placeholder="Email Address *"
                         value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className={`w-full px-4 py-3 rounded-xl border ${errors.email ? 'border-red-500' : 'border-gray-200'} focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all`}
+                        onChange={(e) =>
+                          setFormData({ ...formData, email: e.target.value })
+                        }
+                        className={`w-full px-4 py-3 rounded-xl border ${errors.email ? "border-red-500" : "border-gray-200"} focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all`}
                       />
-                      {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+                      {errors.email && (
+                        <p className="text-red-500 text-sm mt-1">
+                          {errors.email}
+                        </p>
+                      )}
                     </div>
                     <div>
                       <input
                         type="text"
                         placeholder="Location *"
                         value={formData.location}
-                        onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                        className={`w-full px-4 py-3 rounded-xl border ${errors.location ? 'border-red-500' : 'border-gray-200'} focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all`}
+                        onChange={(e) =>
+                          setFormData({ ...formData, location: e.target.value })
+                        }
+                        className={`w-full px-4 py-3 rounded-xl border ${errors.location ? "border-red-500" : "border-gray-200"} focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all`}
                       />
-                      {errors.location && <p className="text-red-500 text-sm mt-1">{errors.location}</p>}
+                      {errors.location && (
+                        <p className="text-red-500 text-sm mt-1">
+                          {errors.location}
+                        </p>
+                      )}
                     </div>
                   </div>
 
                   <div>
                     <select
                       value={formData.service}
-                      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                      className={`w-full px-4 py-3 rounded-xl border ${errors.service ? 'border-red-500' : 'border-gray-200'} focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white`}
+                      onChange={(e) =>
+                        setFormData({ ...formData, service: e.target.value })
+                      }
+                      className={`w-full px-4 py-3 rounded-xl border ${errors.service ? "border-red-500" : "border-gray-200"} focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white`}
                     >
                       <option value="">Select Service *</option>
                       {services.map((s) => (
-                        <option key={s} value={s}>{s}</option>
+                        <option key={s} value={s}>
+                          {s}
+                        </option>
                       ))}
                     </select>
-                    {errors.service && <p className="text-red-500 text-sm mt-1">{errors.service}</p>}
+                    {errors.service && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.service}
+                      </p>
+                    )}
                   </div>
 
                   <div>
@@ -284,10 +360,16 @@ const Contact = () => {
                       placeholder="Your Message *"
                       rows={4}
                       value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className={`w-full px-4 py-3 rounded-xl border ${errors.message ? 'border-red-500' : 'border-gray-200'} focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none`}
+                      onChange={(e) =>
+                        setFormData({ ...formData, message: e.target.value })
+                      }
+                      className={`w-full px-4 py-3 rounded-xl border ${errors.message ? "border-red-500" : "border-gray-200"} focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none`}
                     />
-                    {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
+                    {errors.message && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.message}
+                      </p>
+                    )}
                   </div>
 
                   {submitError && (
