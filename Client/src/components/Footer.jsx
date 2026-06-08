@@ -146,13 +146,6 @@ const Footer = () => {
                 <FaPhone className="text-primary" />
                 <div className="text-white/70">
                   <a
-                    href="tel:+919095520640"
-                    className="hover:text-primary transition-colors"
-                  >
-                    +91 90955 20640
-                  </a>
-                  <br />
-                  <a
                     href="tel:+919488382277"
                     className="hover:text-primary transition-colors"
                   >
