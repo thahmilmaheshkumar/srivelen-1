@@ -207,7 +207,7 @@ const Contact = () => {
 
             <div className="rounded-2xl overflow-hidden shadow-xl h-48 sm:h-64">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!3m2!1sen!2sus!4v1780895424047!5m2!1sen!2sus!6m8!1m7!1sEVBIMps1YR2xN0uKcTtnzw!2m2!1d11.23123389206657!2d77.7179627537031!3f306.5969641008089!4f14.952305649608235!5f0.7820865974627469"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d489.1761644652455!2d77.71794843478384!3d11.231270454306127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba9713821290d0d%3A0x48d7fcf1d40571de!2sSri%20Velan%20Land%20Surveying!5e0!3m2!1sen!2sin!4v1780895574136!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
