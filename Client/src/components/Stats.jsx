@@ -22,7 +22,7 @@ const stats = [
   },
   {
     icon: FaUsers,
-    value: 2000,
+    value: 3999,
     suffix: "+",
     label: "Happy Clients",
   },
