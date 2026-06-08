@@ -1,12 +1,13 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import vijaiKumar from "../assets/vijai_kumar.png";
+import divyaBarathi from "../assets/divya_barathi.png";
 
 const leaders = [
   {
     role: "Founder",
     name: "Er. Vijai Kumar",
-    image:
-      "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image: vijaiKumar,
   },
   {
     role: "Founder",
@@ -17,14 +18,12 @@ const leaders = [
   {
     role: "Chairman",
     name: "Mrs. Divya Bharathi",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8fDA%3D",
+    image: divyaBarathi,
   },
   {
     role: "Managing Director",
     name: "Er. Vijai Kumar",
-    image:
-      "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image: vijaiKumar,
   },
 ];
 
@@ -55,7 +54,7 @@ const Leadership = () => {
         <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 max-w-4xl mx-auto">
           {leaders.map((leader, i) => (
             <motion.div
-              key={leader.role}
+              key={`${leader.role}-${i}`}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: i * 0.15 }}
