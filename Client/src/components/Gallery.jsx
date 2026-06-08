@@ -1,6 +1,7 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import { FaTimes, FaExpand } from "react-icons/fa";
+import tripot from "../assets/equipment.png";
 
 const galleryImages = [
   {
@@ -19,8 +20,8 @@ const galleryImages = [
     category: "Project",
   },
   {
-    src: "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "DGPS Equipment",
+    src: tripot,
+    alt: "Satelite Equipment",
     category: "Equipment",
   },
   {

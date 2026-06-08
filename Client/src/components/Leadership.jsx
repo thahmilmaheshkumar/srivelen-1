@@ -7,7 +7,7 @@ import krishnaraj from "../assets/krisraja.png";
 const leaders = [
   {
     role: "Founder",
-    name: "Er. S.Vijayakumar\n(Licensed Engineer)",
+    name: "Er. S.Vijayakumar",
     image: vijaiKumar,
   },
   {
@@ -17,12 +17,12 @@ const leaders = [
   },
   {
     role: "Chairman",
-    name: "Mrs. Tivya Bharathi Vijayakumar",
+    name: "Mrs. Thivyabharathi Vijayakumar",
     image: divyaBarathi,
   },
   {
     role: "Managing Director",
-    name: "Er. S.Vijayakumar\n(Licensed Engineer)",
+    name: "Er. S.Vijayakumar",
     image: vijaiKumar,
   },
 ];
