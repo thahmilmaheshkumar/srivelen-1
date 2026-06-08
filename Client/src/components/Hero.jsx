@@ -1,5 +1,5 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { FaSatellite, FaPlay } from 'react-icons/fa';
+import { motion, useScroll, useTransform } from "framer-motion";
+import { FaSatellite, FaPlay } from "react-icons/fa";
 
 const Hero = () => {
   const { scrollY } = useScroll();
@@ -7,16 +7,30 @@ const Hero = () => {
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center overflow-hidden"
+    >
       <div className="absolute inset-0 bg-gradient-to-br from-dark-green via-primary to-secondary">
-        <motion.div
-          style={{ y }}
-          className="absolute inset-0 opacity-20"
-        >
-          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <motion.div style={{ y }} className="absolute inset-0 opacity-20">
+          <svg
+            className="w-full h-full"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
             <defs>
-              <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.3"/>
+              <pattern
+                id="grid"
+                width="10"
+                height="10"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M 10 0 L 0 0 0 10"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="0.3"
+                />
               </pattern>
             </defs>
             <rect width="100" height="100" fill="url(#grid)" />
@@ -24,9 +38,9 @@ const Hero = () => {
         </motion.div>
 
         {[
-          { top: '20%', left: '10%', size: '300px', delay: 0 },
-          { top: '60%', left: '80%', size: '200px', delay: 1 },
-          { top: '80%', left: '20%', size: '150px', delay: 2 },
+          { top: "20%", left: "10%", size: "300px", delay: 0 },
+          { top: "60%", left: "80%", size: "200px", delay: 1 },
+          { top: "80%", left: "20%", size: "150px", delay: 2 },
         ].map((shape, i) => (
           <motion.div
             key={i}
@@ -45,7 +59,7 @@ const Hero = () => {
               duration: 4,
               delay: shape.delay,
               repeat: Infinity,
-              ease: 'easeInOut',
+              ease: "easeInOut",
             }}
           />
         ))}
@@ -66,7 +80,9 @@ const Hero = () => {
               className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-white/20 backdrop-blur-sm rounded-full mb-4 sm:mb-6"
             >
               <FaSatellite className="text-light-green shrink-0" />
-              <span className="text-white/90 text-xs sm:text-sm">Professional Surveying Solutions</span>
+              <span className="text-white/90 text-xs sm:text-sm">
+                Professional Surveying Solutions
+              </span>
             </motion.div>
 
             <motion.h1
@@ -95,8 +111,8 @@ const Hero = () => {
               transition={{ delay: 0.5 }}
               className="text-base sm:text-lg text-white/80 mb-6 sm:mb-8 max-w-xl"
             >
-              Professional Surveying Solutions for Your Valuable Land.
-              Accurate measurements using advanced DGPS technology and modern equipment.
+              Professional Surveying Solutions for Your Valuable Land. Accurate
+              measurements using advanced DGPS technology and modern equipment.
             </motion.p>
 
             <motion.div
@@ -139,13 +155,17 @@ const Hero = () => {
               className="mt-8 sm:mt-12 grid grid-cols-3 gap-2 sm:flex sm:items-center sm:gap-6 md:gap-8"
             >
               {[
-                { value: '10+', label: 'Years Experience' },
-                { value: '1000+', label: 'Projects' },
-                { value: '500+', label: 'Happy Clients' },
+                { value: "10+", label: "Years Experience" },
+                { value: "4000+", label: "Projects" },
+                { value: "2000+", label: "Happy Clients" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-white">{stat.value}</div>
-                  <div className="text-[10px] xs:text-xs sm:text-sm text-white/70 leading-tight">{stat.label}</div>
+                  <div className="text-xl sm:text-2xl font-bold text-white">
+                    {stat.value}
+                  </div>
+                  <div className="text-[10px] xs:text-xs sm:text-sm text-white/70 leading-tight">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </motion.div>
@@ -160,7 +180,7 @@ const Hero = () => {
             <motion.div
               className="relative"
               animate={{ y: [0, -20, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             >
               <div className="w-56 h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 mx-auto bg-white/10 backdrop-blur-lg rounded-3xl p-6 lg:p-8 shadow-2xl border border-white/20">
                 <div className="w-full h-full bg-gradient-to-br from-light-green/50 to-white/30 rounded-2xl flex items-center justify-center">
@@ -171,7 +191,7 @@ const Hero = () => {
               <motion.div
                 className="absolute -top-4 -right-4 w-20 h-20 bg-light-green/30 backdrop-blur-md rounded-2xl flex items-center justify-center shadow-xl"
                 animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               >
                 <div className="w-8 h-8 bg-white rounded-full" />
               </motion.div>

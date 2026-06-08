@@ -1,51 +1,52 @@
-import { motion, useInView, AnimatePresence } from 'framer-motion';
-import { useRef, useState } from 'react';
-import { FaTimes, FaExpand } from 'react-icons/fa';
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useRef, useState } from "react";
+import { FaTimes, FaExpand } from "react-icons/fa";
 
 const galleryImages = [
   {
-    src: 'https://images.pexels.com/photos/221912/pexels-photo-221912.jpeg?auto=compress&cs=tinysrgb&w=800',
-    alt: 'Survey Equipment Setup',
-    category: 'Equipment',
+    src: "https://images.unsplash.com/photo-1621918963788-c355a196bd8a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fFN1cnZleSUyMEVxdWlwbWVudCUyMFNldHVwJTIwRXF1aXBtZW50fGVufDB8fDB8fHww",
+    alt: "Survey Equipment Setup",
+    category: "Equipment",
   },
   {
-    src: 'https://images.pexels.com/photos/1117210/pexels-photo-1117210.jpeg?auto=compress&cs=tinysrgb&w=800',
-    alt: 'Land Surveying in Progress',
-    category: 'Survey',
+    src: "https://images.pexels.com/photos/1117210/pexels-photo-1117210.jpeg?auto=compress&cs=tinysrgb&w=800",
+    alt: "Land Surveying in Progress",
+    category: "Survey",
   },
   {
-    src: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800',
-    alt: 'Construction Site Survey',
-    category: 'Project',
+    src: "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800",
+    alt: "Construction Site Survey",
+    category: "Project",
   },
   {
-    src: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800',
-    alt: 'DGPS Equipment',
-    category: 'Equipment',
+    src: "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800",
+    alt: "DGPS Equipment",
+    category: "Equipment",
   },
   {
-    src: 'https://images.pexels.com/photos/15927511/pexels-photo-15927511.jpeg?auto=compress&cs=tinysrgb&w=800',
-    alt: 'Land Measurement',
-    category: 'Survey',
+    src: "https://images.pexels.com/photos/15927511/pexels-photo-15927511.jpeg?auto=compress&cs=tinysrgb&w=800",
+    alt: "Land Measurement",
+    category: "Survey",
   },
   {
-    src: 'https://images.pexels.com/photos/3578395/pexels-photo-3578395.jpeg?auto=compress&cs=tinysrgb&w=800',
-    alt: 'Site Layout Marking',
-    category: 'Project',
+    src: "https://plus.unsplash.com/premium_photo-1661335257817-4552acab9656?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8U2l0ZSUyMExheW91dCUyME1hcmtpbmclMjBQcm9qZWN0fGVufDB8fDB8fHww",
+    alt: "Site Layout Marking",
+    category: "Project",
   },
 ];
 
 const Gallery = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [selectedImage, setSelectedImage] = useState(null);
-  const [filter, setFilter] = useState('All');
+  const [filter, setFilter] = useState("All");
 
-  const categories = ['All', 'Equipment', 'Survey', 'Project'];
+  const categories = ["All", "Equipment", "Survey", "Project"];
 
-  const filteredImages = filter === 'All'
-    ? galleryImages
-    : galleryImages.filter((img) => img.category === filter);
+  const filteredImages =
+    filter === "All"
+      ? galleryImages
+      : galleryImages.filter((img) => img.category === filter);
 
   return (
     <section id="gallery" className="py-12 sm:py-16 lg:py-24 bg-light-green/20">
@@ -77,8 +78,8 @@ const Gallery = () => {
               onClick={() => setFilter(cat)}
               className={`px-4 py-1.5 sm:px-6 sm:py-2 rounded-full font-medium text-sm sm:text-base transition-all ${
                 filter === cat
-                  ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-lg'
-                  : 'bg-white text-text hover:bg-primary/10'
+                  ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg"
+                  : "bg-white text-text hover:bg-primary/10"
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -114,7 +115,9 @@ const Gallery = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-green/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-4 left-4 right-4">
                     <p className="text-white font-semibold">{image.alt}</p>
-                    <span className="text-light-green text-sm">{image.category}</span>
+                    <span className="text-light-green text-sm">
+                      {image.category}
+                    </span>
                   </div>
                   <motion.div
                     className="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center"

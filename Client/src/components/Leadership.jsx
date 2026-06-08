@@ -2,18 +2,18 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import vijaiKumar from "../assets/vijai_kumar.png";
 import divyaBarathi from "../assets/divya_barathi.png";
+import krishnaraj from "../assets/krishnaraj.png";
 
 const leaders = [
   {
     role: "Founder",
-    name: "Er. Vijai Kumar",
+    name: "Er. Vijai Kumar\n(Licensed Engineer)",
     image: vijaiKumar,
   },
   {
     role: "Founder",
-    name: "Dr. Krishnan",
-    image:
-      "https://images.unsplash.com/photo-1615109398623-88346a601842?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aHVtYW58ZW58MHx8MHx8fDA%3D",
+    name: "Dr. Krishnaraj",
+    image: krishnaraj,
   },
   {
     role: "Chairman",
@@ -22,7 +22,7 @@ const leaders = [
   },
   {
     role: "Managing Director",
-    name: "Er. Vijai Kumar",
+    name: "Er. Vijai Kumar\n(Licensed Engineer)",
     image: vijaiKumar,
   },
 ];
@@ -65,14 +65,14 @@ const Leadership = () => {
                 <img
                   src={leader.image}
                   alt={leader.name}
-                  className="relative w-full h-full object-cover rounded-full shadow-xl border-4 border-white group-hover:scale-105 transition-transform duration-300"
+                  className="relative w-full h-full object-fill rounded-full shadow-xl border-4 border-white group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
 
               <h3 className="text-xl sm:text-2xl font-bold text-primary mb-1">
                 {leader.role}
               </h3>
-              <p className="text-base sm:text-lg font-semibold text-dark-green">
+              <p className="text-base sm:text-lg whitespace-pre-wrap font-semibold text-dark-green">
                 {leader.name}
               </p>
             </motion.div>
