@@ -35,7 +35,7 @@ const galleryImages = [
     category: "Survey",
   },
   {
-    src: survey4,
+    src: survey,
     alt: "Land Measurement",
     category: "Survey",
   },
