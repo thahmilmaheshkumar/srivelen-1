@@ -2,6 +2,10 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import { FaTimes, FaExpand } from "react-icons/fa";
 import tripot from "../assets/equipment.png";
+import survey from "../assets/survey.jpeg";
+import survey2 from "../assets/survey2.jpeg";
+import survey3 from "../assets/survey3.jpeg";
+import survey4 from "../assets/survey4.jpeg";
 
 const galleryImages = [
   {
@@ -10,29 +14,30 @@ const galleryImages = [
     category: "Equipment",
   },
   {
-    src: "https://images.pexels.com/photos/1117210/pexels-photo-1117210.jpeg?auto=compress&cs=tinysrgb&w=800",
+    src: survey,
     alt: "Land Surveying in Progress",
     category: "Survey",
   },
-  {
-    src: "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "Construction Site Survey",
-    category: "Project",
-  },
+
   {
     src: tripot,
     alt: "Satelite Equipment",
     category: "Equipment",
   },
   {
-    src: "https://images.pexels.com/photos/15927511/pexels-photo-15927511.jpeg?auto=compress&cs=tinysrgb&w=800",
+    src: survey2,
     alt: "Land Measurement",
     category: "Survey",
   },
   {
-    src: "https://plus.unsplash.com/premium_photo-1661335257817-4552acab9656?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8U2l0ZSUyMExheW91dCUyME1hcmtpbmclMjBQcm9qZWN0fGVufDB8fDB8fHww",
-    alt: "Site Layout Marking",
-    category: "Project",
+    src: survey3,
+    alt: "Land Measurement",
+    category: "Survey",
+  },
+  {
+    src: survey4,
+    alt: "Land Measurement",
+    category: "Survey",
   },
 ];
 
@@ -42,7 +47,7 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [filter, setFilter] = useState("All");
 
-  const categories = ["All", "Equipment", "Survey", "Project"];
+  const categories = ["All", "Equipment", "Survey"];
 
   const filteredImages =
     filter === "All"
