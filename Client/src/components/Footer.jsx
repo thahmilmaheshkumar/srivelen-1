@@ -20,7 +20,7 @@ const Footer = () => {
     },
     {
       name: FaInstagram,
-      href: "#",
+      href: "https://www.instagram.com/srivelanconsultancy2026/",
     },
     {
       name: FaLinkedin,

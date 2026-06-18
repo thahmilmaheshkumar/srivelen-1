@@ -52,7 +52,7 @@ const Navbar = () => {
               <p
                 className={`text-xs hidden xs:block ${scrolled ? "text-primary" : "text-light-green"}`}
               >
-                Digital Surveying Solutions
+                Digital Land Surveying Solutions
               </p>
             </div>
           </motion.a>
