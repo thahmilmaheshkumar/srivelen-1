@@ -7,14 +7,15 @@ import krishnaraj from "../assets/krisraja.png";
 const leaders = [
   {
     role: "Founder",
-    name: "Er. S.Vijayakumar",
-    image: vijaiKumar,
-  },
-  {
-    role: "Founder",
     name: "Dr. A.R.Krishnaraja",
     image: krishnaraj,
   },
+  {
+    role: "Co-Founder",
+    name: "Er. S.Vijayakumar",
+    image: vijaiKumar,
+  },
+
   {
     role: "Chairman",
     name: "Mrs. Thivyabharathi Vijayakumar",
